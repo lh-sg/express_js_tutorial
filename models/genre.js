@@ -9,8 +9,8 @@ const GenreSchema = new Schema({
         type: String,
         required: true,
         enum: ['action','drama','comedy','horror','non-fiction'],
-        default: "action",
     },
+    description: { type: String },
 });
 
 GenreSchema.virtual('url').get(function () {

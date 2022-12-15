@@ -16,7 +16,7 @@ exports.author_list = function (req,res,next) {
     });
 };
 
-exports.author_detail = function (req,res,next) {
+exports.author_detail = (req,res,next) => {
   async.parallel(
     {
       author(callback) {
@@ -36,7 +36,7 @@ exports.author_detail = function (req,res,next) {
         return next(app);
       }
       res.render('author_detail',{
-        title: 'Authro Detail',
+        title: 'Author Detail',
         author: results.author,
         author_books: results.authors_books,
       });
